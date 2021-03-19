@@ -114,7 +114,7 @@ label
 
 뭘 의미하는지는 잘 이해 안됨 
 
-<img src="images/output_filter">
+<img src="images/output_filter.PNG">
 
 
 
