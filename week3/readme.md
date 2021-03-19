@@ -11,7 +11,7 @@
 
 ### 🐷 Let's find the best number of Hidden layer size!
 
-
+<img src="images/ttb.PNG" width="70%" height="70%">
 
 - TRY1 : Size 50
 <img src="images/TRY1_50.PNG">
