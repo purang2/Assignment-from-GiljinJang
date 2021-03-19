@@ -8,7 +8,7 @@
 
 
 -------
-## Fashion MNIST Data
+## 1. Fashion MNIST Data
 
 ### In code 
 
@@ -140,6 +140,16 @@ plt.show()
 
 <img src="images/output_filter.PNG" width="60%" height="60%">
 
+
+
+
+
+-----------
+
+
+## 2. sckit-learn’s Digits data 
+
+<img src="images/sclearn.PNG" width="60%" height="60%"> 
 
 
 
