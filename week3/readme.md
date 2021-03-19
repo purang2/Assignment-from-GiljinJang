@@ -64,6 +64,9 @@ label
 
 <img src="images/ttb.PNG" width="70%" height="70%">
 
+
+🚗Let's try.
+
 |Rank#|HiddenLayer Size|Traning Score|Test Score|
 |----|----|----|-----|
 |⭐1|784|0.919183|0.885600|
