@@ -46,13 +46,13 @@
 
 <img src="images/TRY7_32.PNG" width="80%" height="80%">
 
-😅Google's pick, but..
-<img src="images/google_pick.PNG" width="50%" height="50%">
+😅Google's pick, but..  
+<img src="images/google_pick.PNG" width="40%" height="40%">
  
  
 - TRY8 : Size 256
 
-<img src="images/TRY8_256.PNG" width=width="80%" height="80%">
+<img src="images/TRY8_256.PNG" width="80%" height="80%">
 
 
 
