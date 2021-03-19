@@ -116,6 +116,7 @@ label
 
 필터 이미지만 봐서는 정확한 이해가 안됨..😅
 
+**.py **
 
 ```python
 
@@ -134,6 +135,8 @@ plt.show()
 
 
 
+
+**Plot**
 
 <img src="images/output_filter.PNG" width="60%" height="60%">
 
