@@ -53,6 +53,12 @@ label
 
 
 
+
+
+--------
+
+
+
 ## 🐷 Hidden layer 최적의 개수 찾기
 
 <img src="images/ttb.PNG" width="70%" height="70%">
