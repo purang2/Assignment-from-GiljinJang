@@ -112,11 +112,11 @@ label
 
 -------
 
-### plot output filter
+##Let's Plot output filter
 
 필터 이미지만 봐서는 정확한 이해가 안됨..😅
 
-**.py **
+**python code**
 
 ```python
 
