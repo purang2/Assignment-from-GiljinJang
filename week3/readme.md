@@ -43,9 +43,14 @@ label
 
 **Sample Data**  
 
-<img src="images/FMNIST_data.PNG" width="70%" height="70%">
+<img src="images/FMNIST_data.PNG" width="60%" height="60%">
 
-<img src="images/FMNIST2.PNG" width="70%" height="70%">
+**Label = 9(Ankle boot)**    
+
+
+<img src="images/FMNIST2.PNG" width="60%" height="60%">
+
+**Label = 2(Pullover)**  
 
 
 ### 🐷 Let's find the best number of Hidden layer size!
