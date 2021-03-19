@@ -136,7 +136,7 @@ plt.show()
 
 
 
-**Plot**
+**Filter Image**
 
 <img src="images/output_filter.PNG" width="60%" height="60%">
 
