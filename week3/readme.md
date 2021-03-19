@@ -65,7 +65,7 @@ label
 <img src="images/ttb.PNG" width="70%" height="70%">
 
 
-🚗Let's try.
+🚗**Let's try!!**  
 
 |Rank#|HiddenLayer Size|Traning Score|Test Score|
 |----|----|----|-----|
