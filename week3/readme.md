@@ -7,6 +7,39 @@
 
 
 -------
+### FashionMNIST 
+
+```python
+#Keras library makes it easy to use Fashion MNIST datasets.
+
+fashion_mnist = keras.datasets.fashion_mnist
+(train_images, train_labels), (test_images, test_labels) = fashion_mnist.load_data()
+
+'''
+dataset info  @EunchanLee
+
+train_images = (60000,28,28) 60000 images of 28x28
+test_images  = (10000,28,28) 10000 images of 28x28
+
+train_labels = (60000,)      60000 label values of 1D array   
+test_labels  = (10000,)      10000 label values of 1D array   
+
+
+label 
+
+0 ~ 9 exists
+
+0 = T-shirt/top 1 = Trouser 
+2 = Pullover    3 = Dress
+4 = Coat        5 = Sandal
+6 = Shirt       7 = Sneaker
+8 = Bag         9 = Ankle boot
+'''
+
+```
+<img src="images/FMNIST_data.PNG" width="70%" height="70%">
+
+<img src="images/FMNIST2.PNG" width="70%" height="70%">
 
 
 ### 🐷 Let's find the best number of Hidden layer size!
