@@ -147,7 +147,7 @@ plt.show()
 -----------
 
 
-## 2. sckit-learn’s Digits data 
+## 2. scikit-learn’s Digits data 
 
 <img src="images/sclearn.PNG" width="60%" height="60%"> 
 
