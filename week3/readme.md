@@ -11,6 +11,8 @@
 
 ### 🐷 Let's find the best number of Hidden layer size!
 
+
+
 - TRY1 : Size 50
 <img src="images/TRY1_50.PNG">
 
