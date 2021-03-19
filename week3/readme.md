@@ -14,28 +14,32 @@
 <img src="images/ttb.PNG" width="70%" height="70%">
 
 - TRY1 : Size 50
-<img src="images/TRY1_50.PNG">
+<img src="images/TRY1_50.PNG" width="50%" height="50%">
 
 - TRY2 : Size 100
-<img src="images/TRY2_100.PNG">
+<img src="images/TRY2_100.PNG" width="50%" height="50%">
 
 - TRY3 : Size 25
-<img src="images/TRY3_25.PNG">
+<img src="images/TRY3_25.PNG" width="50%" height="50%">
 
 - TRY4 : Size 128
-<img src="images/TRY4_128.PNG">
+<img src="images/TRY4_128.PNG" width="50%" height="50%">
 
 - TRY5 : Size 784
-<img src="images/TRY5_784.PNG">
+<img src="images/TRY5_784.PNG" width="50%" height="50%">
 
 - TRY6 : Size 3136
-<img src="images/TRY6_3136.PNG">
+<img src="images/TRY6_3136.PNG" width="50%" height="50%">
+
+- TRY7 : Size 32
+
+<img src="images/TRY7_32.PNG" width="50%" height="50%">
 
 <img src="images/google_pick.PNG" width="50%" height="50%">
-- TRY7 : Size 32 (Google's pick, but..)
-<img src="images/TRY7_32.PNG">
 
+**😅Google's pick, but..**
+ 
 - TRY8 : Size 256
-<img src="images/TRY8_256.PNG">
+<img src="images/TRY8_256.PNG" width="50%" height="50%">
 
 
