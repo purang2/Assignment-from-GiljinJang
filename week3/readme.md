@@ -112,7 +112,7 @@ label
 
 -------
 
-##Let's Plot output filter
+## Let's plot output filter
 
 필터 이미지만 봐서는 정확한 이해가 안됨..😅
 
