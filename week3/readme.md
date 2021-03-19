@@ -31,7 +31,7 @@
 - TRY6 : Size 3136
 <img src="images/TRY6_3136.PNG">
 
-<img src="images/google_pick.PNG">
+<img src="images/google_pick.PNG" width="50%" height="50%">
 - TRY7 : Size 32 (Google's pick, but..)
 <img src="images/TRY7_32.PNG">
 
