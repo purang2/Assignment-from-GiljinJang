@@ -114,7 +114,7 @@ label
 
 ## Let's plot output filter
 
-필터 이미지만 봐서는 정확한 이해가 안됨..😅
+필터 이미지만 봐서는 정확한 이해가 안됨..😅 -> 그림은 알아보기 어렵지만 아마 아 필터가 Hidden Layer로 동작했을 때 명확하게 구분 가능하게 작동할 것 같다
 
 **python code**
 
