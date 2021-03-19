@@ -7,9 +7,9 @@
 
 
 -------
-### FashionMNIST 
+## Fashion MNIST Data
 
-**In code**  
+### In code 
 
 ```python
 
@@ -41,19 +41,19 @@ label
 
 ```
 
-**Sample Data**  
+### Sample Data  
+
+**Label = 9(Ankle boot)**
 
 <img src="images/FMNIST_data.PNG" width="60%" height="60%">
 
-**Label = 9(Ankle boot)**    
-
-
+**Label = 2(Pullover)**  
+    
 <img src="images/FMNIST2.PNG" width="60%" height="60%">
 
-**Label = 2(Pullover)**  
 
 
-### 🐷 Let's find the best number of Hidden layer size!
+## 🐷 Hidden layer 최적의 개수 찾기
 
 <img src="images/ttb.PNG" width="70%" height="70%">
 
