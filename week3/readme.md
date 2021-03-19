@@ -110,9 +110,12 @@ label
 
 
 
+-------
+
 ### plot output filter
 
-뭘 의미하는지는 잘 이해 안됨 
+필터 이미지만 봐서는 정확한 이해가 안됨..😅
+
 
 ```python
 
@@ -128,6 +131,8 @@ for coef, ax in zip(mlp.coefs_[0].T, axes.ravel()):
 plt.show()
 
 ```
+
+
 
 
 <img src="images/output_filter.PNG" width="60%" height="60%">
