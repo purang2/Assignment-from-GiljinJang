@@ -9,7 +9,10 @@
 -------
 ### FashionMNIST 
 
+**In code**  
+
 ```python
+
 #Keras library makes it easy to use Fashion MNIST datasets.
 
 fashion_mnist = keras.datasets.fashion_mnist
@@ -37,6 +40,9 @@ label
 '''
 
 ```
+
+**Sample Data**  
+
 <img src="images/FMNIST_data.PNG" width="70%" height="70%">
 
 <img src="images/FMNIST2.PNG" width="70%" height="70%">
