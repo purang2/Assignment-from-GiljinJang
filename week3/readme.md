@@ -6,7 +6,7 @@
 ](https://stats.stackexchange.com/questions/181/how-to-choose-the-number-of-hidden-layers-and-nodes-in-a-feedforward-neural-netw)
 
 ### 참고 
-- [실습: 딥러닝으로 MNIST 98%이상 해보기](https://www.youtube.com/watch?v=6CCXyfvubvY)
+- [실습: 딥러닝으로 MNIST 98%이상 해보기] (https://www.youtube.com/watch?v=6CCXyfvubvY)
 - [TensorFlow로 구현하자 with CNN (MNIST 99%)] (https://www.youtube.com/watch?v=pQ9Y9ZagZBk)
 
 
