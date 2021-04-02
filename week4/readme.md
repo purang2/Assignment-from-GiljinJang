@@ -43,7 +43,8 @@ hw4-3.py = HW4-3 for Wine.csv
 **신경망 모델 예측 성능 Accuracy**  
 
 
-▶86~87%대 Test Accuracy 보임 !
+▶86~87%대 Test Accuracy 보임 !  
+
 <img src="4-1_result.PNG">
 
 
