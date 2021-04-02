@@ -1,5 +1,19 @@
 ## Week 4. 신경망 학습 on Fashion-MNIST & Digits-data & wine.csv
 
+### .py info
+```(python)
+main.py = example code
+hw4-1.py = HW4-1 for Fashion-MNIST
+hw4-2.py = HW4-2 for Digits in Scikit-learn
+hw4-3.py = HW4-3 for Wine.csv
+
+
+```
+
+
+
+
+
 ### 🔨😀
 
 - data 총 3개
