@@ -1,6 +1,6 @@
 ## Week 4. 신경망 학습 on Fashion-MNIST & Digits-data & wine.csv
 
-### .py info
+### 🖥File info
 ```(python)
 main.py = example code
 hw4-1.py = HW4-1 for Fashion-MNIST
@@ -40,7 +40,8 @@ hw4-3.py = HW4-3 for Wine.csv
 
 ### Dataset 1. Fashion-MNIST
 
-
+**신경망 모델 예측 성능 Accuracy**
+<img src="4-1_result.png">
 
 
 --------
