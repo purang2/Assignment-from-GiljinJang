@@ -40,8 +40,9 @@ hw4-3.py = HW4-3 for Wine.csv
 
 ### Dataset 1. Fashion-MNIST
 
-**신경망 모델 예측 성능 Accuracy**
-<img src="4-1_result.png">
+**신경망 모델 예측 성능 Accuracy**  
+
+<img src="4-1_result.PNG">
 
 
 --------
