@@ -57,6 +57,11 @@ hw4-3.py = HW4-3 for Wine.csv
 
 
 
+▶96%대 Test Accuracy 보임 !  
+
+정확도 상승 원인: Fashion-MNIST에 비해 비교적 적은 데이터 size
+
+<img src="4-1_result.PNG">
 
 --------
 
