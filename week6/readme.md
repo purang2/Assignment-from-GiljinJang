@@ -1,6 +1,6 @@
 # 지능 시스템 설계 Homework 5
 
-[pdf readme를 클릭하세요!](https://github.com/purang2/DeepLearning_Prac/blob/main/week6/hw5-doc.pdf)
+[pdf readme!! 이곳을 클릭하세요!](https://github.com/purang2/DeepLearning_Prac/blob/main/week6/hw5-doc.pdf)
 
 > ***Dep: Electronics***
 ***ID: 2021220699
