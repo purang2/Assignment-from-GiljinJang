@@ -49,8 +49,8 @@ label
 
 
 #Reduce dimensions
-train_images = train_images/17
-test_images  = test_images/17
+train_images = train_images/16
+test_images  = test_images/16
 
 #Fitting variable names to fit the MLP model
 X_train = train_images
