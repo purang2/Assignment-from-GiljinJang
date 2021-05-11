@@ -1,3 +1,10 @@
+# ID: 2021220699
+# NAME: Eunchan Lee 
+# File name: MNIST_train_deepnet.py
+# Platform: Python 3.9 on Spyder5 (Windows 10)
+# Required Package(s): sys os numpy pandas matplotlib 
+
+
 # coding: utf-8
 import sys, os
 sys.path.append(os.pardir)  # 부모 디렉터리의 파일을 가져올 수 있도록 설정
