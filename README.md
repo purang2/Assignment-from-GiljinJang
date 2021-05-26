@@ -12,7 +12,7 @@ This is a Repository for Intelligent System Design practice assignments.
 - week 6: **Train Techniques(optimizer, Normalize)**  : Fashion-MNIST, sklearn-Digits dataset
 - week 8: **Data Spliting**           : Fashion-MNIST, sklearn-Digits dataset 
 - week 9: **Convolution Neural Network** : Simple ConvNet& LeNet ,by MNIST  
-- week 10: **Deep Neural Network** : 
+- week 10: **Deep CNN Network** :  MNIST, FashionMNIST dataset
 
 ▶밑바닥부터 시작하는 딥러닝 2권
 - week 11: To be continued...
