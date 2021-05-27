@@ -15,7 +15,8 @@ This is a Repository for Intelligent System Design practice assignments.
 - week 10: **Deep CNN Network** :  MNIST, FashionMNIST dataset
 
 ▶밑바닥부터 시작하는 딥러닝 2권
-- week 11: To be continued...
+- week 11: **자연어와 단어의 분산 표현**: 자연어 처리의 기초 전처리 과정   
+- week 12: **Word2Vec** : CBOW, SkipGram  
 
 
 
