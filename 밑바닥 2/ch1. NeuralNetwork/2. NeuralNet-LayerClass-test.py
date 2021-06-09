@@ -15,7 +15,7 @@ class Sigmoid:
     def forward(self, x):
         return 1 / (1 + np.exp(-x))
 
-
+    
 class Affine: 
     def __init__(self, W,b):
         self.params = [W,b]
@@ -69,7 +69,7 @@ class TwoLayerNet:
         
         self.params = []
         for layer in self.layers:
-            self.params += layer.params
+            self.params += layer.params   # a = [1,2] a+=[3,4] = [1,2,3,4]
             
         
     def predict(self, x):
