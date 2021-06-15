@@ -12,7 +12,6 @@ from common.optimizer import SGD
 from common.trainer import Trainer 
 from common.layers import Affine, Sigmoid, SoftmaxWithLoss
 
-
 # 교재에서 가져온 Source Code [Adam, TwoLayerNet]
 class Adam:
     '''
@@ -92,7 +91,6 @@ class TwoLayerNet:
         return accuracy 
     
 
-    
         
 #데이터 분석 [EDA, Exploratory Data Analysis] 
 
@@ -116,7 +114,7 @@ for i in range(len(y)):
 t = np.array(t)
 
 
-#데이터 정규화[Data Normalization] : 다차원 array indexing 기법 중 column 인덱스를 추출하는 문법을 사용 
+#데이터 정규화[Data Normalize] : 다차원 array indexing 기법 중 column 인덱스를 추출하는 문법을 사용 
 x_column_len = len(x[0,:]) # (1000,57) -> x_column_len = 57
 for i in range(x_column_len):
     x[:,i] = x[:,i]/max(x[:,i])
@@ -132,7 +130,6 @@ x_test = x[Test_set]
 t_train = t[Train_set]
 t_test = t[Test_set]
 
-    
 #신경망 설계 [Neuralnet Modeling]
 model = TwoLayerNet(input_size=57, hidden_size =5000, output_size =10)
 #optimizer = SGD(lr=0.01)
@@ -141,9 +138,16 @@ optimizer = Adam()
 #교재 제공 Trainer Class를 사용하여 Model Training 수행 
 GTZAN_MLP = Trainer(model, optimizer)
 #GTZAN_MLP.fit(x,y, max_epoch=30)
-GTZAN_MLP.fit(x,t, max_epoch=300,batch_size=32)
+GTZAN_MLP.fit(x,t, max_epoch=150,batch_size=32)
 
 
+from sklearn.metrics import confusion_matrix
+# Confusion Matrix
 
-
-
+preds = model.predict(x_test)
+confusion_matr = confusion_matrix(t_test, preds) #normalize = 'true'
+plt.figure(figsize = (16, 9))
+sns.heatmap(confusion_matr, cmap="Blues", annot=True, 
+            xticklabels = ["blues", "classical", "country", "disco", "hiphop", "jazz", "metal", "pop", "reggae", "rock"],
+           yticklabels=["blues", "classical", "country", "disco", "hiphop", "jazz", "metal", "pop", "reggae", "rock"]);
+plt.savefig("conf matrix")

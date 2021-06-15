@@ -6,7 +6,7 @@ import time
 import matplotlib.pyplot as plt
 from common.np import *  # import numpy as np
 from common.util import clip_grads
-
+import seaborn as sns 
 
 class Trainer:
     def __init__(self, model, optimizer):
@@ -16,14 +16,15 @@ class Trainer:
         self.eval_interval = None
         self.current_epoch = 0
 
-    def fit(self, x, t, max_epoch=10, batch_size=32, max_grad=None, eval_interval=20):
+    def fit(self, x, t, max_epoch=10, batch_size=32, max_grad=None, eval_interval=31):
         data_size = len(x)
         max_iters = data_size // batch_size
         self.eval_interval = eval_interval
         model, optimizer = self.model, self.optimizer
         total_loss = 0
         loss_count = 0
-
+        
+        accuracy_list = []
         start_time = time.time()
         for epoch in range(max_epoch):
             # 뒤섞기
@@ -51,15 +52,26 @@ class Trainer:
                 if (eval_interval is not None) and (iters % eval_interval) == 0:
                     avg_loss = total_loss / loss_count
                     elapsed_time = time.time() - start_time
+                    acc = model.accuracy(batch_x, batch_t)
+                    accuracy_list.append(100*acc)
                     #print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 손실 %.2f'
-                    print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 손실 %.2f | 정확도 %.2f(%)'
-                          % (self.current_epoch + 1, iters + 1, max_iters, elapsed_time, avg_loss, 100*model.accuracy(batch_x, batch_t)
+                    print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 손실 %.2f | 정확도 %.3f'
+                          % (self.current_epoch + 1, iters + 1, max_iters, elapsed_time, avg_loss, 100*acc
 ))
                     self.loss_list.append(float(avg_loss))
                     total_loss, loss_count = 0, 0
-
+            
             self.current_epoch += 1
-
+        
+        #Accuracy Plotting
+        sns.set_style("darkgrid") #Seaborn UI
+        plt.title("Model Perfomance! [Hidden : 5000, Epoch: 300]")
+        plt.plot(accuracy_list)
+        plt.xlabel('Epochs')
+        plt.ylabel('Test Accuracy')
+        plt.show()
+    
+    
     def plot(self, ylim=None):
         x = numpy.arange(len(self.loss_list))
         if ylim is not None:
@@ -130,7 +142,10 @@ class RnnlmTrainer:
                     total_loss, loss_count = 0, 0
 
             self.current_epoch += 1
-
+        
+            
+        
+        
     def plot(self, ylim=None):
         x = numpy.arange(len(self.ppl_list))
         if ylim is not None:
