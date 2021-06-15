@@ -1,10 +1,7 @@
 # -*- coding: utf-8 -*-
 """
-Created on Thu Jun 10 11:25:23 2021
-
 @지능시스템 설계 Final Project
 """
-
 
 #필요한 라이브러리
 import pandas as pd 
@@ -14,7 +11,6 @@ sys.path.append('..')
 from common.optimizer import SGD
 from common.trainer import Trainer 
 from common.layers import Affine, Sigmoid, SoftmaxWithLoss
-
 
 
 # 교재에서 가져온 Source Code [Adam, TwoLayerNet]
@@ -133,12 +129,9 @@ np.random.shuffle(Train_set)
 
 x_train = x[Train_set]
 x_test = x[Test_set]
-
 t_train = t[Train_set]
 t_test = t[Test_set]
 
-'''
-    
     
 #신경망 설계 [Neuralnet Modeling]
 model = TwoLayerNet(input_size=57, hidden_size =5000, output_size =10)
@@ -151,4 +144,6 @@ GTZAN_MLP = Trainer(model, optimizer)
 GTZAN_MLP.fit(x,t, max_epoch=300,batch_size=32)
 
 
-'''
+
+
+
