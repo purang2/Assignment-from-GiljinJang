@@ -2,20 +2,22 @@
 """
 Created on Thu Jun 10 11:25:23 2021
 
-
 @지능시스템 설계 Final Project
-
 """
+
+
+#필요한 라이브러리
 import pandas as pd 
 import numpy as np
-
-
 import sys 
 sys.path.append('..')
 from common.optimizer import SGD
 from common.trainer import Trainer 
 from common.layers import Affine, Sigmoid, SoftmaxWithLoss
 
+
+
+# 교재에서 가져온 Source Code [Adam, TwoLayerNet]
 class Adam:
     '''
     Adam (http://arxiv.org/abs/1412.6980v8)
@@ -84,7 +86,17 @@ class TwoLayerNet:
         for layer in reversed(self.layers):
             dout = layer.backward(dout)
         return dout
+    
+    def accuracy(self, x, t):
+        y = self.predict(x)
+        y = np.argmax(y, axis=1)
+        t = np.argmax(t, axis=1)
         
+        accuracy = np.sum(y == t) / float(x.shape[0])
+        return accuracy 
+    
+
+    
         
 #데이터 분석 [EDA, Exploratory Data Analysis] 
 
@@ -92,39 +104,51 @@ data = pd.read_csv('data/features_30_sec.csv')
 
 x = data.drop(['filename','length','label'], axis=1) #Features, #axis = 1을 통해 column 제거 
 y = data['label'] #Label
+x = x.to_numpy()
 
 
+#레이블을 원핫벡터로 표현: Ex) 'Pop' = [0 0 0 1 0 0 0 0 0 0]
 
-#Label to int(0~9) 
 genres = list(set(y))
-
 t = []
 
-for i in range(len(y)):
-    
-    one_hot_vector = [0]*10 
+for i in range(len(y)): 
+    one_hot_vector = [0]*10 # [0 0 0 0 0 0 0 0 0 0]
     one_hot_vector[genres.index(y.loc[i])] = 1
-    #y[i] = np.array(one_hot_vector)
     t.append(np.array(one_hot_vector))
-    #y.loc[i] = genres.index(y.loc[i])
-#y = y.to_numpy()   
+  
 t = np.array(t)
 
 
-x = x.to_numpy()
+#데이터 정규화[Data Normalization] : 다차원 array indexing 기법 중 column 인덱스를 추출하는 문법을 사용 
+x_column_len = len(x[0,:]) # (1000,57) -> x_column_len = 57
+for i in range(x_column_len):
+    x[:,i] = x[:,i]/max(x[:,i])
+    
 
-#y = y.to_numpy(dtype="int")
-#y = y.to_numpy(dtype="array")
+#데이터 분리[Train-test-Validation spliting] Train 75: Test 25
+Test_set = np.random.choice(1000,250,replace=False)
+Train_set = np.delete(np.arange(1000),Test_set)
+np.random.shuffle(Train_set)
 
+x_train = x[Train_set]
+x_test = x[Test_set]
+
+t_train = t[Train_set]
+t_test = t[Test_set]
+
+'''
+    
+    
 #신경망 설계 [Neuralnet Modeling]
-model = TwoLayerNet(input_size=57, hidden_size =50, output_size =10)
-optimizer = SGD(lr=1)
-#optimizer = Adam()
+model = TwoLayerNet(input_size=57, hidden_size =5000, output_size =10)
+#optimizer = SGD(lr=0.01)
+optimizer = Adam()
 
 #교재 제공 Trainer Class를 사용하여 Model Training 수행 
 GTZAN_MLP = Trainer(model, optimizer)
 #GTZAN_MLP.fit(x,y, max_epoch=30)
-GTZAN_MLP.fit(x,t, max_epoch=30)
+GTZAN_MLP.fit(x,t, max_epoch=300,batch_size=32)
 
 
-
+'''
