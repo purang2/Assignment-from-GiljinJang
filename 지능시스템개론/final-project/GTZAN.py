@@ -131,13 +131,14 @@ t_test = t[Test_set]
 
 
 #신경망 설계 [Neuralnet Modeling]
-model = TwoLayerNet(input_size=57, hidden_size =5000, output_size =10)
+#model = TwoLayerNet(input_size=57, hidden_size =5000, output_size =10)
+model = TwoLayerNet(input_size=57, hidden_size = 114, output_size =10)
 
-optimizer = Adam()
-
+#optimizer = Adam()
+optimizer =Adam(lr=0.018)
 #교재 제공 Trainer Class를 사용하여 Model Training 수행 
 GTZAN_MLP = Trainer(model, optimizer)
-GTZAN_MLP.fit(x,t, max_epoch=300,batch_size=32)
+GTZAN_MLP.fit(x,t,x_train, t_train, x_test, t_test, max_epoch=250,batch_size=128)
 
 '''
 from sklearn.metrics import confusion_matrix

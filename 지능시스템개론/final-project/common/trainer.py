@@ -16,7 +16,7 @@ class Trainer:
         self.eval_interval = None
         self.current_epoch = 0
 
-    def fit(self, x, t, max_epoch=10, batch_size=32, max_grad=None, eval_interval=31):
+    def fit(self, x, t, x_train, t_train, x_test, t_test, max_epoch=10, batch_size=32, max_grad=None, eval_interval=31):
         data_size = len(x)
         max_iters = data_size // batch_size
         self.eval_interval = eval_interval
@@ -25,13 +25,15 @@ class Trainer:
         loss_count = 0
         
         accuracy_list = []
+        train_acc_list = []
+        test_acc_list = []
         start_time = time.time()
         for epoch in range(max_epoch):
             # 뒤섞기
             idx = numpy.random.permutation(numpy.arange(data_size))
             x = x[idx]
             t = t[idx]
-
+            
             for iters in range(max_iters):
                 batch_x = x[iters*batch_size:(iters+1)*batch_size]
                 batch_t = t[iters*batch_size:(iters+1)*batch_size]
@@ -47,31 +49,56 @@ class Trainer:
                 loss_count += 1
 
                 #model.accuracy(batch_x, batch_t)
-
+                
                 # 평가
                 if (eval_interval is not None) and (iters % eval_interval) == 0:
                     avg_loss = total_loss / loss_count
                     elapsed_time = time.time() - start_time
                     acc = model.accuracy(batch_x, batch_t)
                     accuracy_list.append(100*acc)
+                    train_acc = model.accuracy(x_train, t_train)
+                    test_acc = model.accuracy(x_test, t_test)
+                    train_acc_list.append(train_acc*100)
+                    test_acc_list.append(test_acc*100)
+                    
+                    #formatting : 소숫점 4째자리 반올림 (보기좋게)
+                    print(f"[Accuracy] Train(%): {round(train_acc*100,4)}", end=' ')
+                    print(f"Test(%): {round(test_acc*100,4)}")
+                    
                     #print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 손실 %.2f'
                     print('| 에폭 %d |  반복 %d / %d | 시간 %d[s] | 손실 %.2f | 정확도 %.3f'
                           % (self.current_epoch + 1, iters + 1, max_iters, elapsed_time, avg_loss, 100*acc
-))
+))                  
+                    
+                    
                     self.loss_list.append(float(avg_loss))
                     total_loss, loss_count = 0, 0
             
             self.current_epoch += 1
         
         #Accuracy Plotting
+        
         sns.set_style("darkgrid") #Seaborn UI
-        plt.title("Model Perfomance! [Hidden : 5000, Epoch: 300]")
-        plt.plot(accuracy_list)
+        plt.title("Model Perfomance!")
+        #plt.plot(accuracy_list)
+        plt.plot(train_acc_list,label='train')
+        plt.plot(test_acc_list, label='test')
         plt.xlabel('Epochs')
-        plt.ylabel('Test Accuracy')
+        plt.ylabel('Accuracy')
+        plt.legend(loc='lower right')
         plt.show()
-    
-    
+        
+        '''
+        markers = {'train': 'o', 'test': 's'}
+        x = np.arange(max_epoch)
+        plt.plot(x, train_acc_list, marker='o', label='train', markevery=10)
+        plt.plot(x, test_acc_list, marker='s', label='test', markevery=10)
+        plt.xlabel("epochs")
+        plt.ylabel("accuracy")
+        plt.ylim(0, 1.0)
+        plt.legend(loc='lower right')
+        plt.show()
+        '''
     def plot(self, ylim=None):
         x = numpy.arange(len(self.loss_list))
         if ylim is not None:
