@@ -93,7 +93,6 @@ class TwoLayerNet:
 
         
 #데이터 분석 [EDA, Exploratory Data Analysis] 
-
 data = pd.read_csv('data/features_30_sec.csv')
 
 x = data.drop(['filename','length','label'], axis=1) #Features, #axis = 1을 통해 column 제거 
@@ -105,12 +104,10 @@ x = x.to_numpy()
 
 genres = list(set(y))
 t = []
-
 for i in range(len(y)): 
     one_hot_vector = [0]*10 # [0 0 0 0 0 0 0 0 0 0]
     one_hot_vector[genres.index(y.loc[i])] = 1
-    t.append(np.array(one_hot_vector))
-  
+    t.append(np.array(one_hot_vector))  
 t = np.array(t)
 
 
@@ -130,17 +127,19 @@ x_test = x[Test_set]
 t_train = t[Train_set]
 t_test = t[Test_set]
 
+
+
+
 #신경망 설계 [Neuralnet Modeling]
 model = TwoLayerNet(input_size=57, hidden_size =5000, output_size =10)
-#optimizer = SGD(lr=0.01)
+
 optimizer = Adam()
 
 #교재 제공 Trainer Class를 사용하여 Model Training 수행 
 GTZAN_MLP = Trainer(model, optimizer)
-#GTZAN_MLP.fit(x,y, max_epoch=30)
-GTZAN_MLP.fit(x,t, max_epoch=150,batch_size=32)
+GTZAN_MLP.fit(x,t, max_epoch=300,batch_size=32)
 
-
+'''
 from sklearn.metrics import confusion_matrix
 # Confusion Matrix
 
@@ -151,3 +150,4 @@ sns.heatmap(confusion_matr, cmap="Blues", annot=True,
             xticklabels = ["blues", "classical", "country", "disco", "hiphop", "jazz", "metal", "pop", "reggae", "rock"],
            yticklabels=["blues", "classical", "country", "disco", "hiphop", "jazz", "metal", "pop", "reggae", "rock"]);
 plt.savefig("conf matrix")
+'''
