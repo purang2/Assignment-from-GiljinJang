@@ -1,9 +1,23 @@
+# ID: 2021220699
+# NAME: Eunchan Lee 
+# File name: GTZAN.py
+# Platform: Python 3.9 on Spyder5 (Windows 10)
+# Required Package(s): pandas numpy sys time matplotlib seaborn
+
 # -*- coding: utf-8 -*-
-"""
-@지능시스템 설계 Final Project @이은찬
-"""
+
+
+'''
+
+지능 시스템 설계 Final Project Main Code 
+
+주제: GTZAN Dataset을 이용한 음원 장르 예측 신경망 만들어보기 
+개발자: Eunchan Lee @[KNU-BrainAI Lab, Kyungpook National University]
+
+'''
 
 #필요한 라이브러리
+
 import pandas as pd 
 import numpy as np
 import sys 
@@ -12,7 +26,6 @@ import time
 import matplotlib.pyplot as plt
 import seaborn as sns 
 GPU = False 
-
 
 
 '''
@@ -303,7 +316,7 @@ class Trainer:
         plt.ylabel('손실')
         plt.show()
 
-def clip_grads(grads, max_norm):
+def clip_grads(grads, max_norm): '''For Trainer'''
     total_norm = 0
     for grad in grads:
         total_norm += np.sum(grad ** 2)
@@ -314,7 +327,7 @@ def clip_grads(grads, max_norm):
         for grad in grads:
             grad *= rate
 
-def remove_duplicate(params, grads):
+def remove_duplicate(params, grads): '''For Trainer'''
     '''
     매개변수 배열 중 중복되는 가중치를 하나로 모아
     그 가중치에 대응하는 기울기를 더한다.
@@ -352,11 +365,9 @@ def remove_duplicate(params, grads):
 
 
 
-
 '''
 
 2. 데이터 분석 및 전처리
-
 
 '''
 
@@ -426,8 +437,6 @@ GTZAN_MLP = Trainer(model, optimizer)
 
 
 
-## Training 실행 
+## Training 실행 및 결과 출력 
 GTZAN_MLP.fit(x,t,x_train, t_train, x_test, t_test, max_epoch=250,batch_size=128)
-
-
 
