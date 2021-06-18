@@ -13,15 +13,16 @@ import matplotlib.pyplot as plt
 import seaborn as sns 
 GPU = False 
 
-# 교재를 응용한 Source Code 
 
 
+'''
+1. Source Code [교재를 응용]
+
+'''
 ## 옵티마이저 [SGD, Adam]
 
 class SGD:
-    '''
-    확률적 경사하강법(Stochastic Gradient Descent)
-    '''
+    
     def __init__(self, lr=0.01):
         self.lr = lr
         
@@ -31,9 +32,7 @@ class SGD:
 
 
 class Adam:
-    '''
-    Adam (http://arxiv.org/abs/1412.6980v8)
-    '''
+   
     def __init__(self, lr=0.001, beta1=0.9, beta2=0.999):
         self.lr = lr
         self.beta1 = beta1
@@ -61,7 +60,7 @@ class Adam:
  
     
  
-  
+
  
 ## MLP 신경망 [TwoLayerNet]             
  
@@ -153,7 +152,7 @@ class SoftmaxWithLoss:
         self.t = t
         self.y = softmax(x)
 
-        # 정답 레이블이 원핫 벡터일 경우 정답의 인덱스로 변환
+        '''정답 레이블이 원핫 벡터일 경우 정답의 인덱스로 변환'''
         if self.t.size == self.y.size:
             self.t = self.t.argmax(axis=1)
 
@@ -354,8 +353,12 @@ def remove_duplicate(params, grads):
 
 
 
-# 데이터 분석 전처리 [EDA, Exploratory Data Analysis] 
+'''
 
+2. 데이터 분석 및 전처리
+
+
+'''
 
 
 ## csv 파일 Read 
@@ -404,14 +407,21 @@ t_test = t[Test_set]
 
 
 
-#신경망 설계 [Neuralnet Modeling]
+'''
+
+3. 신경망 설계 및 훈련 [Neuralnet Modeling and Training]
 
 
+'''
+
+
+## 모델, 옵티마이저 세팅 
+''' HIDDEN-SIZE, LEARNING-RATE(LR)는 지속적인 수정을 통해 좋은 결과를 내는 값으로 지정하였다 '''
 model = TwoLayerNet(input_size=57, hidden_size = 114, output_size =10)
-
-
 optimizer =Adam(lr=0.018)
-#교재 제공 Trainer Class를 사용하여 Model Training 수행 
+
+
+## 교재 제공 Trainer Class를 사용하여 Model Training 수행 
 GTZAN_MLP = Trainer(model, optimizer)
 
 
