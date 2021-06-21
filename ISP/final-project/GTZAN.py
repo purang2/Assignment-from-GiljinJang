@@ -2,7 +2,7 @@
 # NAME: Eunchan Lee 
 # File name: GTZAN.py
 # Platform: Python 3.9 on Spyder5 (Windows 10)
-# Required Package(s): pandas numpy sys time matplotlib seaborn
+# Required Package(s): pandas numpy sys time matplotlib seaborn kaggle
 
 # -*- coding: utf-8 -*-
 
@@ -316,7 +316,8 @@ class Trainer:
         plt.ylabel('손실')
         plt.show()
 
-def clip_grads(grads, max_norm): '''For Trainer'''
+def clip_grads(grads, max_norm): 
+    '''For Trainer'''
     total_norm = 0
     for grad in grads:
         total_norm += np.sum(grad ** 2)
@@ -327,7 +328,8 @@ def clip_grads(grads, max_norm): '''For Trainer'''
         for grad in grads:
             grad *= rate
 
-def remove_duplicate(params, grads): '''For Trainer'''
+def remove_duplicate(params, grads): 
+    '''For Trainer'''
     '''
     매개변수 배열 중 중복되는 가중치를 하나로 모아
     그 가중치에 대응하는 기울기를 더한다.
@@ -363,8 +365,6 @@ def remove_duplicate(params, grads): '''For Trainer'''
 
 
 
-
-
 '''
 
 2. 데이터 분석 및 전처리
@@ -380,7 +380,7 @@ data = pd.read_csv('data/features_30_sec.csv')
 
 ## Feature(x), Label(y)로 분류하는 작업 
 
-x = data.drop(['filename','length','label'], axis=1) '''Features, #axis = 1을 통해 column 제거 '''
+x = data.drop(['filename','length','label'], axis=1) #Features, #axis = 1을 통해 column 제거
 y = data['label'] #Label
 x = x.to_numpy()
 
