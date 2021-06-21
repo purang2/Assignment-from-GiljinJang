@@ -2,7 +2,7 @@
 # NAME: Eunchan Lee 
 # File name: GTZAN.py
 # Platform: Python 3.9 on Spyder5 (Windows 10)
-# Required Package(s): pandas numpy sys time matplotlib seaborn kaggle
+# Required Package(s): pandas numpy sys time matplotlib seaborn 
 
 # -*- coding: utf-8 -*-
 
@@ -26,6 +26,8 @@ import time
 import matplotlib.pyplot as plt
 import seaborn as sns 
 GPU = False 
+
+
 
 
 '''
@@ -365,6 +367,8 @@ def remove_duplicate(params, grads):
 
 
 
+
+
 '''
 
 2. 데이터 분석 및 전처리
@@ -373,8 +377,9 @@ def remove_duplicate(params, grads):
 
 
 ## csv 파일 Read 
-
-data = pd.read_csv('data/features_30_sec.csv')
+url='https://raw.githubusercontent.com/purang2/deepLearning-practice/main/ISP/final-project/data/features_30_sec.csv'
+#data = pd.read_csv('data/features_30_sec.csv')
+data = pd.read_csv(url)
 
 
 
