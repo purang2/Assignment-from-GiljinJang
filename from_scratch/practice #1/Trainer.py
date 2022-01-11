@@ -11,7 +11,7 @@ sys.path.append('..')
 #import numpy
 import time
 import matplotlib.pyplot as plt
-import numpy as np
+import numpy
 from util import clip_grads
 
 
